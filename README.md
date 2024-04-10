@@ -1,6 +1,5 @@
 # Git Practice note!
-https://ithelp.ithome.com.tw/upload/images/20190227/20115569eeG008szA0.png
-
+![alt text](image-1.png)
 ```c
 $ git status
 // 觀看目前資料夾狀態
@@ -52,3 +51,9 @@ $git checkout -- <檔案名稱>
 $git reset --soft HEAD~1
 //如果commit訊息打錯了，可以回覆一次（~恢復幾次）
 ```
+
+## conflicts概念
+A修改一段訊息“大象會飛”並且已經commit並推上github了
+此時，B還沒有git pull，把“大象會飛”改成“你還好嗎”，此時直接push就會出錯，因為B並沒有把最新的檔案pull下來
+但是當B執行pull的時候，git會自動偵測到衝突的地方，如下圖所示
+![alt text](image.png)，如果用vscode就可以直接按Accept Current Change選擇自己的內容，如果兩個都是你要的可以先按both那個再自己手動修改
