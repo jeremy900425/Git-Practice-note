@@ -20,7 +20,7 @@ $ git commit --amend --no-edit
 $ git log
 // 查詢所有 commit 紀錄
 
-$ git log -p 
+$ git log -p
 // 參數 -p 顯示 commit 詳細資訊
 
 $ git log --oneline --graph
@@ -40,4 +40,9 @@ $git push -u origin master
 //-u：代表把預設的remote設定成origin 未來push如果不指定remote都會推到origin
 
 //所以說只要用過$git push -u origin master之後都只要打git push就好
+```
+
+```c
+$git reset -- <檔案名稱>
+//把add的檔案移除，因為commit只會推上有add過後的檔案
 ```
