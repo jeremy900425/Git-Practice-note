@@ -123,7 +123,10 @@ $git switch <branch名稱> or main
     $git push -f
     //這個指令可以強制洗掉歷史紀錄，＊＊＊＊千萬不能在 main分支 or 大多數人共用的分支上面做使用
     ```
-    
+    ```c
+    $git branch -d <branch名稱>
+    //刪除branch，如果這個branch有推到github，這個branch不會刪掉
+    ```
     
     
 2. 在自己的電腦中坐merge後，再push上去
