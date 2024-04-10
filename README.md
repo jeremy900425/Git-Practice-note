@@ -77,4 +77,57 @@ $git branch -a
 
 $git push -u origin new_branch
 //把新增的branch推上github
+
+$git switch <branch名稱> or main
+//切換分支 #要切換分支必須先做commit，技巧是可以先亂commit等到切回來的時候使用undo last commit來取消上次亂commit的動作
+
 ```
+把branch推上去後就可以在github上面看到這個branch
+![alt text](image-3.png)
+
+以下是main的md檔案內容，未有branch中的更新
+![alt text](image-2.png)
+
+以下是我在branch中有commit並且推上去的更新，接下來就是如何把 branch 整併到 main 中
+![alt text](image-4.png)
+
+### 整併branch到main中有兩種方法
+1. 在github上面直接使用pull request功能(推薦)
+    ![alt text](image-5.png)
+    下圖：點選 Compare&pull request 或是 Open pull request都可以
+    ![alt text](image-6.png)
+
+    下圖：點進去後顯示的是現在準備把test_branch整併進入main裡面，此時系統會檢查是否有衝突（Able to merge表示無衝突）
+    ![alt text](image-7.png)
+    下圖：查看commit紀錄就會發現有pull request的紀錄了
+    ![alt text](image-10.png)
+
+    下圖：有衝突如圖所示，解法是「rebase」，意思就是現在main可能有繼續更新，那現在只要把我目前做的東西接在main的最後面就解決了
+    ![alt text](image-8.png)
+    ![alt text](image-9.png)
+    先使用 git switch main 切換到 main分支，然後使用git pull把最新的進度抓下來，接著git switch new_branch，輸入
+    ```c
+    $git rebase <rebase到哪個分支>
+    ```
+    然後就會出現衝突需要解決，解決完之後輸入
+    ```c
+    $git rebase --continue
+    //解完後繼續剛剛的rebase操作（有可能衝突要解複數次）
+    ```
+    成功rebase後，此時輸入 git log 就會看到main最新的commit以及branch上面的commit(我的commit會是最新的，因為在做rebase)
+    此時就可以執行git push，但是也有可能會出錯，因為剛剛做了rebase，此時本地的log和remote的log不相容，以下舉例
+    ```c
+    //本地：a->main_commit -> b -> c
+    //遠端：a -> b -> c
+    //此時當然不能push，除非使用以下指令
+    $git push -f
+    //這個指令可以強制洗掉歷史紀錄，＊＊＊＊千萬不能在 main分支 or 大多數人共用的分支上面做使用
+    ```
+    
+    
+    
+2. 在自己的電腦中坐merge後，再push上去
+
+`Pull Request 是一种通知机制，它可以告知仓库的其他开发者，你推送了一个仓库新分支。`
+![alt text](image-11.png)
+
