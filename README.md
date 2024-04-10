@@ -76,7 +76,7 @@ $git branch -a
 //A在main上面做了修改也commit並push上去
 
 $git push -u origin new_branch
-//把新增的branch推上github
+//把新增的branch推上github(這個就是設定upstream)
 
 $git switch <branch名稱> or main
 //切換分支 #要切換分支必須先做commit，技巧是可以先亂commit等到切回來的時候使用undo last commit來取消上次亂commit的動作
@@ -97,7 +97,7 @@ $git switch <branch名稱> or main
     下圖：點選 Compare&pull request 或是 Open pull request都可以
     ![alt text](image-6.png)
 
-    下圖：點進去後顯示的是現在準備把test_branch整併進入main裡面，此時系統會檢查是否有衝突（Able to merge表示無衝突）
+    下圖：點進去後顯示的是現在準備把test_branch整併進入main裡面，此時系統會檢查是否有衝突（Able to merge表示無衝突）最後專案管理者接受Pull request後代表這個分支成功接到main了
     ![alt text](image-7.png)
     下圖：查看commit紀錄就會發現有pull request的紀錄了
     ![alt text](image-10.png)
@@ -127,6 +127,8 @@ $git switch <branch名稱> or main
     
     
 2. 在自己的電腦中坐merge後，再push上去
+
+
 
 `Pull Request 是一种通知机制，它可以告知仓库的其他开发者，你推送了一个仓库新分支。`
 ![alt text](image-11.png)
