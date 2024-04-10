@@ -45,4 +45,10 @@ $git push -u origin master
 ```c
 $git reset -- <檔案名稱>
 //把add的檔案移除，因為commit只會推上有add過後的檔案
+
+$git checkout -- <檔案名稱>
+//pull後 對A檔案做了修改，想要恢復成原本pull下來的狀態就使用這個指令 #要先unstage
+
+$git reset --soft HEAD~1
+//如果commit訊息打錯了，可以回覆一次（~恢復幾次）
 ```
