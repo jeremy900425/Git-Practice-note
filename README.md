@@ -129,7 +129,14 @@ $git switch <branch名稱> or main
     ```
     
     
-2. 在自己的電腦中坐merge後，再push上去
+2. 在自己的電腦中做merge後，再push上去
+   ```c
+   //A在main上做了一些commit
+   //B開分支也在分支上做了commit，此時B不知道A已經有對master commit過了，所以如果切回main直接執行（這裡當然也可以用rebase處理）
+   $git merge <branch名稱>
+   //此時會成功merge，但是當你要push的時候就會出錯，因為本地log和github的log是不一樣的（這時候不可以使用-f，因為最新的歷史會消失）
+   //所以這時候要在本地的master中使用pull，這時候就會告訴你哪裡可能有conflicts，解決後就可以push上去了
+   ```
 
 `Pull Request 是一种通知机制，它可以告知仓库的其他开发者，你推送了一个仓库新分支。`
 ![alt text](image-11.png)
