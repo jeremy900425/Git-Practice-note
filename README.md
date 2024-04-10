@@ -97,9 +97,9 @@ $git switch <branch名稱> or main
     下圖：點選 Compare&pull request 或是 Open pull request都可以
     ![alt text](image-6.png)
 
-    下圖：點進去後顯示的是現在準備把test_branch整併進入main裡面，此時系統會檢查是否有衝突（Able to merge表示無衝突）
+    下圖：點進去後顯示的是現在準備把test_branch整併進入main裡面，此時系統會檢查是否有衝突（Able to merge表示無衝突），這時候點一點就會發現成功發PR了，接下來就等專案管理者同意merge到main branch裡面
     ![alt text](image-7.png)
-    下圖：查看commit紀錄就會發現有pull request的紀錄了
+    下圖：專案管理者同意後，查看commit紀錄就會發現有pull request的紀錄了
     ![alt text](image-10.png)
 
     下圖：有衝突如圖所示，解法是「rebase」，意思就是現在main可能有繼續更新，那現在只要把我目前做的東西接在main的最後面就解決了
