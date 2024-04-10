@@ -56,4 +56,5 @@ $git reset --soft HEAD~1
 A修改一段訊息“大象會飛”並且已經commit並推上github了
 此時，B還沒有git pull，把“大象會飛”改成“你還好嗎”，此時直接push就會出錯，因為B並沒有把最新的檔案pull下來
 但是當B執行pull的時候，git會自動偵測到衝突的地方，如下圖所示
-![alt text](image.png)，如果用vscode就可以直接按Accept Current Change選擇自己的內容，如果兩個都是你要的可以先按both那個再自己手動修改
+![alt text](image.png)
+如果用vscode就可以直接按Accept Current Change選擇自己的內容，如果兩個都是你要的可以先按both那個再自己手動修改
