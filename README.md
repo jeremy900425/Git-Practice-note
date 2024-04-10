@@ -58,3 +58,23 @@ A修改一段訊息“大象會飛”並且已經commit並推上github了
 但是當B執行pull的時候，git會自動偵測到衝突的地方，如下圖所示
 ![alt text](image.png)
 如果用vscode就可以直接按Accept Current Change選擇自己的內容，如果兩個都是你要的可以先按both那個再自己手動修改
+
+## Git branch是解決怎樣的事情
+1. push上的都要是已經完成的功能
+2. 解決彼此的conflicts
+##### 所以說只要開了一個自己的分支就不用怕一直被conflicts了，只是最後要整併進main branch的時候還是要除錯
+
+```c
+$git checkout -b <branch名稱>
+//建立新branch並切換過去
+
+$git branch
+//查看電腦上的branch(按q可以離開)
+$git branch -a
+//查看所有的branch(包含remote)
+//然後假設B那這個new_branch上面做了幾次開發也commit了數次
+//A在main上面做了修改也commit並push上去
+
+$git push -u origin new_branch
+//把新增的branch推上github
+```
