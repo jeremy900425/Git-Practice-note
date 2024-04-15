@@ -114,7 +114,7 @@ $git switch <branch名稱> or main
     $git rebase --continue
     //解完後繼續剛剛的rebase操作（有可能衝突要解複數次）
     ```
-    成功rebase後，此時輸入 git log 就會看到main最新的commit以及branch上面的commit(我的commit會是最新的，因為在做rebase)
+    成功rebase後（要自己重新commit上去），此時輸入 git log 就會看到main最新的commit以及branch上面的commit(我的commit會是最新的，因為在做rebase)
     此時就可以執行git push，但是也有可能會出錯，因為剛剛做了rebase，此時本地的log和remote的log不相容，以下舉例
     ```c
     //本地：a->main_commit -> b -> c
@@ -127,6 +127,7 @@ $git switch <branch名稱> or main
     $git branch -d <branch名稱>
     //刪除branch，如果這個branch有推到github，這個branch不會刪掉
     ```
+    之後再回到PR的畫面就會發現Conflict已經消失了
     
     
 2. 在自己的電腦中做merge後，再push上去
